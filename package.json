@@ -1,0 +1,21 @@
+{
+  "name": "merge-files-webpack-plugin",
+  "version": "1.0.0",
+  "description": "A webpack plugin to merge different files outputted from extract-text-webpack-plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "testWP": "node --nolazy --debug-brk=5858 ./node_modules/webpack/bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtefera/merge-files-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtefera/merge-files-webpack/issues"
+  },
+  "homepage": "https://github.com/jtefera/merge-files-webpack#readme"
+}
