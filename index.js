@@ -82,9 +82,11 @@ mergeFilesWebpack.prototype.apply = function mergeFilesWebpackApply(compiler) {
                 if(compilation.entrypoints.hasOwnProperty(entryName)){
                     var entry = compilation.entrypoints[entryName];
                     for(var i = 0; i < filteredFiles.length; i++) {
-                        var idx = entry.chunks[0].files.indexOf(filteredFiles[i]);
-                        if(idx > -1) {
-                            entry.chunks[0].files.splice(idx, 1);
+                        for(var j = 0; j < entry.chunks.length; j++){
+                            var idx = entry.chunks[j].files.indexOf(filteredFiles[i]);
+                            if(idx > -1) {
+                                entry.chunks[j].files.splice(idx, 1);
+                            }
                         }
                     }
                 }
