@@ -37,7 +37,9 @@ module.exports = {
             filename: '[name].style.css'
         }),
         new MergeFilesPlugin({
-            filename: 'style.css'
+            filename: 'css/style.css',
+            test: /style\.css/, // it could also be a string
+            deleteSourceFiles: true
         })
     ]
 }

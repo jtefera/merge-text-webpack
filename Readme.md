@@ -19,9 +19,9 @@ Install:
 
     npm install merge-text-webpack-plugin --save-dev
 
-You need to use **webpack 2.\*** and **extract-text-webpack-plugin 2.0.0\***.
+You need to use **webpack 2+** and **extract-text-webpack-plugin 2+**.
 The filename for the **extract-text-webpack-plugin** has to use **[name].something.ext** 
-where *something.ext* isthe name of the final file that you want to create. For this 
+where *something.ext* is the name of the final file that you want to create. For this 
 plugin, use then *something.ext* as the filename in the options objects.
 
 A sample file would be:
@@ -56,9 +56,18 @@ A sample file would be:
                 filename: '[name].style.css'
             }),
             new MergeFilesPlugin({
-                filename: 'style.css'
+                filename: 'css/style.css',
+                test: /style\.css/, // it could also be a string
+                deleteSourceFiles: true
             })
         ]
     }
 
-Check the test directory in https://github.com/jtefera/merge-files-webpack/tests/test1
+The config object passed to MergeFilesPlugin admits:
+
++ **filename**: Final name of the file created by merging the files. The file will be saved in the output path. You can add extra path in front of the filename. Required. String.
++ **test**: Test applied to the different files created by webpack to see which should be merged. For the previous example, the files created by webpack with ExtractTextPlugin will be `entry1.js`, `entry1.style.css`, `entry2.js` and `entry2.style.css`. We are interested in `entry1.style.css` and `entry2.style.css` that are created by the ExtractTextPlugin plugin. As such, a good test will be `style.css` or `/\.css/` if you want to use RegExp. Optional. If it is not specified, filename is used.
++ **deleteSourceFiles**: If true, `entry1.style.css` and `entry2.style.css` will be deleted. If false, they will be created. If not specified, by default is setted to `true`.
+
+
+Check the test directory in https://github.com/jtefera/merge-files-webpack/tree/master/tests/test1
