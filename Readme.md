@@ -21,8 +21,7 @@ Install:
 
 You need to use **webpack 2+** and **extract-text-webpack-plugin 2+**.
 The filename for the **extract-text-webpack-plugin** has to use **[name].something.ext** 
-where *something.ext* is the name of the final file that you want to create. For this 
-plugin, use then *something.ext* as the filename in the options objects.
+where *something.ext* is the name that will be used in the *test* option of this plugin. 
 
 A sample file would be:
 
