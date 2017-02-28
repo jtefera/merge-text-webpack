@@ -7,6 +7,7 @@
 3 info using node@v6.9.4
 4 info git [ 'status', '--porcelain' ]
 5 verbose stack Error: Git working directory not clean.
+5 verbose stack D debug.log
 5 verbose stack D npm-debug.log
 5 verbose stack     at C:\Users\Jonathan\AppData\Roaming\npm\node_modules\npm\lib\version.js:247:19
 5 verbose stack     at C:\Users\Jonathan\AppData\Roaming\npm\node_modules\npm\lib\utils\no-progress-while-running.js:21:8
@@ -24,6 +25,7 @@
 9 error node v6.9.4
 10 error npm  v4.0.2
 11 error Git working directory not clean.
+11 error D debug.log
 11 error D npm-debug.log
 12 error If you need help, you may report this error at:
 12 error     <https://github.com/npm/npm/issues>
