@@ -13,13 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/jtefera/merge-files-webpack.git"
   },
-  "author": "",
+  "author": "Jonathan Tefera Endale (jtefera)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jtefera/merge-files-webpack/issues"
   },
-  "homepage": "https://github.com/jtefera/merge-files-webpack#readme",
-  "devDependencies": {
-    "rimraf": "^2.6.1"
-  }
+  "homepage": "https://github.com/jtefera/merge-files-webpack#readme"
 }
