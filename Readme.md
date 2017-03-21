@@ -17,7 +17,7 @@ into a single **.css** file.
 
 Install:
 
-    npm install merge-text-webpack-plugin --save-dev
+    npm install merge-files-webpack-plugin --save-dev
 
 You need to use **webpack 2+** and **extract-text-webpack-plugin 2+**.
 The filename for the **extract-text-webpack-plugin** has to use **[name].something.ext** 
