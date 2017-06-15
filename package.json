@@ -18,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/jtefera/merge-files-webpack/issues"
   },
-  "homepage": "https://github.com/jtefera/merge-files-webpack#readme"
+  "homepage": "https://github.com/jtefera/merge-files-webpack#readme",
+  "dependencies": {
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "rimraf": "^2.6.1"
+  }
 }

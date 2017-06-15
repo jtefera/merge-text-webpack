@@ -1,3 +1,5 @@
+var sortByDependency = require('html-webpack-plugin/lib/chunksorter.js').dependency;
+
 function mergeFilesWebpack(options){
     if(typeof options !== 'object' && !options.filename) {
         throw new Error('Filename is mandatory');
@@ -44,7 +46,11 @@ mergeFilesWebpack.prototype.apply = function mergeFilesWebpackApply(compiler) {
     compiler.plugin('emit', (function (compilation, callback) {
         var assets = compilation.assets;
         // array of file names e.g.  [entry1.js, entry1.style.css,...]
-        var files = Object.keys(assets); 
+        var allChunks = compilation.getStats().toJson().chunks;
+        var sortedChunks = sortByDependency(allChunks);
+        var groupsOfFiles = sortedChunks.map(chunk => chunk.files)
+        var files = [].concat.apply([], groupsOfFiles)
+
         var test = this.test;
         var filteredFiles = files.filter(function(file) {
             return file.search(test) > -1;
