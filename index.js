@@ -93,7 +93,8 @@ mergeFilesWebpack.prototype.apply = function mergeFilesWebpackApply(compiler) {
             }
         }
         // Creating our file!!
-        assets[this.filename] = firstFile;
+        var hash = compilation.hash;
+        assets[this.filename.replace('[hash]', hash)] = firstFile;
         // The emit event is async so you need to call the callback to make 
         // webpack know that you have finished
         callback();
